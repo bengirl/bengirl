@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 6.10 (454267)"/><meta name="keywords" content="es6"/><meta name="author" content="cbq8787cbq"/><meta name="created" content="2017-02-12 16:37:06 +0000"/><meta name="updated" content="2017-02-13 02:11:36 +0000"/><title>es6 环境安装与配置</title></head><body><div/><div>1、首先安装node.js的环境。</div><div>2、npm安装es6转码规则。</div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div># ES2015转码规则
+</div><div>$ npm install --save-dev babel-preset-es2015
+</div><div><br/></div><div># react转码规则
+</div><div>$ npm install --save-dev babel-preset-react
+</div><div><br/></div><div># ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个
+</div><div>$ npm install --save-dev babel-preset-stage-0
+</div><div>$ npm install --save-dev babel-preset-stage-1
+</div><div>$ npm install --save-dev babel-preset-stage-2
+</div><div>$ npm install --save-dev babel-preset-stage-3</div></div><div>3、安装命令行转码babel-cli</div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><span style="color: rgb(255, 0, 0);">$ npm install --save-dev babel-cli</span></div><div><br/></div><div># 转码结果输出到标准输出
+</div><div>$ babel example.js
+</div><div><br/></div><div># 转码结果写入一个文件
+</div><div># --out-file 或 -o 参数指定输出文件
+</div><div>$ babel example.js --out-file compiled.js
+</div><div># 或者
+</div><div>$ babel example.js -o compiled.js
+</div><div><br/></div><div># 整个目录转码
+</div><div># --out-dir 或 -d 参数指定输出目录
+</div><div>$ babel src --out-dir lib
+</div><div># 或者
+</div><div>$ babel src -d lib
+</div><div><br/></div><div># -s 参数生成source map文件
+</div><div>$ babel src -d lib -s</div></div><div><br/></div><div>然后，改写package.json</div><div style="box-sizing: border-box; padding: 8px; border-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); background-color: rgb(251, 250, 248);"><div><span style="font-size: 12px;"><span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;"><span style="color: rgb(51, 51, 51);">{
+ 
+</span></span></span></div><div><span style="font-size: 12px;"><span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;"><span style="color: rgb(51, 51, 51);">  "devDependencies": {
+</span></span></span></div><div><span style="font-size: 12px;"><span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;"><span style="color: rgb(51, 51, 51);">    "babel-cli": "6.22.2"
+</span></span></span></div><div><span style="font-size: 12px;"><span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;"><span style="color: rgb(51, 51, 51);">  },
+</span></span></span></div><div><span style="font-size: 12px;"><span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;"><span style="color: rgb(51, 51, 51);">  "scripts": {
+</span></span></span></div><div><span style="font-size: 12px;"><span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;"><span style="color: rgb(51, 51, 51);">    "build": "babel src -d lib"
+</span></span></span></div><div><span style="font-size: 12px;"><span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;"><span style="color: rgb(51, 51, 51);">  },
+</span></span></span></div><div><span style="font-size: 12px;"><span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;"><span style="color: rgb(51, 51, 51);">}</span></span></span></div></div><div>转码的时候，就执行下面的命令。<span style="color: rgb(255, 0, 0);">$ npm run build</span></div><div><span style="color: rgb(255, 0, 0);"><br/></span></div><div>4、项目根目录建立一个.babelrc 文件。</div><div>里面内容为：</div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div>{
+</div><div>    "presets":[
+</div><div>        'es2015',
+</div><div>        'stage-0'
+</div><div>    ],
+</div><div>     "plugins": []
+</div><div>}</div></div><div><br/></div><div>5、babel-node命令可以直接运行ES6脚本</div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div>$ babel-node es6.js   </div><div>或者如下：</div><div>$ babel-node
+</div><div>&gt; (x =&gt; x * 2)(1)
+</div><div>2</div></div><div><br/></div><div><br/></div></body></html>
