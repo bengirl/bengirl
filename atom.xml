@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>benQ 一个爱折腾的人</title>
+  <subtitle>es6 react JavaScript</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://bengirl.github.io/"/>
+  <updated>2017-02-19T18:38:28.000Z</updated>
+  <id>https://bengirl.github.io/</id>
+  
+  <author>
+    <name>benQ</name>
+    <email>240018677@qq.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo常用命令</title>
+    <link href="https://bengirl.github.io/2017/02/19/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>https://bengirl.github.io/2017/02/19/hexo常用命令/</id>
+    <published>2017-02-19T14:31:24.000Z</published>
+    <updated>2017-02-19T18:38:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="hexo收集整理了一堆命令"><a href="#hexo收集整理了一堆命令" class="headerlink" title="hexo收集整理了一堆命令"></a>hexo收集整理了一堆命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo  //安装hexo</div><div class="line">$ npm init  //初始化</div><div class="line">$ npm install  // hexo 项目文件下安装依耐</div><div class="line">$ hexo server  //或hexo -s 启动hexo服务</div><div class="line">[info] Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div><div class="line">$ hexo new &quot;postName&quot; //或者hexo n 新建文章</div><div class="line">hexo new page &quot;pageName&quot; // 新建页面</div><div class="line">$ hexo clean // 每次先删除了在生成</div><div class="line">$ hexo generate //或hexo -g 将 md文件转成静态网页 </div><div class="line">$ hexo deploy  //或hexo -d 发布到github上</div><div class="line">$ hexo help  // 查看帮助</div><div class="line">$ hexo version  // 查看Hexo的版本</div><div class="line">$ hexo deploy -g // 生成加部署</div><div class="line">$ hexo server -g  // 生成加预览</div></pre></td></tr></table></figure>
+<h3 id="hexo参考链接"><a href="#hexo参考链接" class="headerlink" title="hexo参考链接"></a>hexo参考链接</h3><p><a href="http://www.jianshu.com/p/e99ed60390a8" target="_blank" rel="external">http://www.jianshu.com/p/e99ed60390a8</a><br><a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="external">http://www.jianshu.com/p/465830080ea9</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;hexo收集整理了一堆命令&quot;&gt;&lt;a href=&quot;#hexo收集整理了一堆命令&quot; class=&quot;headerlink&quot; title=&quot;hexo收集整理了一堆命令&quot;&gt;&lt;/a&gt;hexo收集整理了一堆命令&lt;/h3&gt;&lt;figure class=&quot;highlight plai
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://bengirl.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hello world</title>
+    <link href="https://bengirl.github.io/2017/02/17/hello-world/"/>
+    <id>https://bengirl.github.io/2017/02/17/hello-world/</id>
+    <published>2017-02-17T11:11:51.000Z</published>
+    <updated>2017-02-19T18:27:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://bengirl.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
