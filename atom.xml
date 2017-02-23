@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bengirl.github.io/"/>
-  <updated>2017-02-19T18:38:28.000Z</updated>
+  <updated>2017-02-23T17:21:36.000Z</updated>
   <id>https://bengirl.github.io/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>es6-configAndInstall</title>
+    <link href="https://bengirl.github.io/2017/02/24/es6-configAndInstall/"/>
+    <id>https://bengirl.github.io/2017/02/24/es6-configAndInstall/</id>
+    <published>2017-02-23T17:19:52.000Z</published>
+    <updated>2017-02-23T17:21:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>##es6 环境安装与配置<br>1、首先安装node.js的环境。<br>2、npm安装es6转码规则。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># ES2015转码规则</div><div class="line">$ npm install --save-dev babel-preset-es2015</div><div class="line"># react转码规则</div><div class="line">$ npm install --save-dev babel-preset-react</div><div class="line"># ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个</div><div class="line">$ npm install --save-dev babel-preset-stage-0</div><div class="line">$ npm install --save-dev babel-preset-stage-1</div><div class="line">$ npm install --save-dev babel-preset-stage-2</div><div class="line">$ npm install --save-dev babel-preset-stage-3</div></pre></td></tr></table></figure></p>
+<p>3、安装命令行转码babel-cli<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev babel-cli</div><div class="line"># 转码结果输出到标准输出</div><div class="line">$ babel example.js</div><div class="line"># 转码结果写入一个文件</div><div class="line"># --out-file 或 -o 参数指定输出文件</div><div class="line">$ babel example.js --out-file compiled.js</div><div class="line"># 或者</div><div class="line">$ babel example.js -o compiled.js</div><div class="line"># 整个目录转码</div><div class="line"># --out-dir 或 -d 参数指定输出目录</div><div class="line">$ babel src --out-dir lib</div><div class="line"># 或者</div><div class="line">$ babel src -d lib</div><div class="line"># -s 参数生成source map文件</div><div class="line">$ babel src -d lib -s</div></pre></td></tr></table></figure></p>
+<p>4、改写或者新加文件 package.json<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;description&quot;: &quot;es6 demo&quot;,</div><div class="line">  &quot;author&quot;: &quot;ben&quot;,</div><div class="line">  &quot;license&quot;: &quot;MIT&quot;,</div><div class="line">  &quot;devDependencies&quot;: &#123;</div><div class="line">    &quot;babel-cli&quot;: &quot;^6.22.2&quot;,</div><div class="line">    &quot;babel-preset-es2015&quot;: &quot;^6.22.0&quot;,</div><div class="line">    &quot;babel-preset-react&quot;: &quot;^6.23.0&quot;,</div><div class="line">    &quot;babel-preset-stage-0&quot;: &quot;^6.22.0&quot;,</div><div class="line">    &quot;babel-register&quot;: &quot;^6.23.0&quot;,</div><div class="line">    &quot;es-checker&quot;: &quot;^1.4.0&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;scripts&quot;: &#123;</div><div class="line">    &quot;build&quot;: &quot;babel src -d lib&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>转码的时候，就执行下面的命令。$ npm run build</p>
+</blockquote>
+<hr>
+<p>5、项目根目录建立一个.babelrc 文件,里面内容为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;presets&quot;: [</div><div class="line">    &quot;es2015&quot;,</div><div class="line">    &quot;react&quot;,</div><div class="line">    &quot;stage-0&quot;</div><div class="line">  ],</div><div class="line">  &quot;plugins&quot;: []</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>6、babel-node命令可以直接运行ES6脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ babel-node es6.js  </div><div class="line">或者如下：</div><div class="line">$ babel-node</div><div class="line">&gt; (x =&gt; x * 2)(1)</div><div class="line">2</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##es6 环境安装与配置&lt;br&gt;1、首先安装node.js的环境。&lt;br&gt;2、npm安装es6转码规则。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;l
+    
+    </summary>
+    
+    
+      <category term="es6" scheme="https://bengirl.github.io/tags/es6/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo常用命令</title>
